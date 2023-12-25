@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мини-блог</title>
+    <style>
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Добро пожаловать в мини-блог</h1>
+        <nav>
+                <a href="/"><button>Главная</button></a>
+                <a href="/create"><button>Создать запись</button></a>
+                <a href="/rules"><button>Правила</button></a>
+                <a href="/info"><button>Разработчики</button></a>
+        </nav>
+    </header>
+    {% if posts.count %}
+        <ul>
+            {% for post in posts%}
+                <p> {{post.name}}</p>
+                <p> {{post.text_data}}</p>
+                <img src="{{ post.photo.url }}" style="max-width: 20%;">
+            {%endfor%}
+        </ul>
+    {%else%}
+        <p>Отсутсвуют записи</p>
+    {%endif%}
+</body>
+</html>

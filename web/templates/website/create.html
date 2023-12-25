@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мини-блог</title>
+    <style>
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Создайте новую запись</h1>
+        <nav>
+                <a href="/"><button>Главная</button></a>
+                <a href="/create"><button>Создать запись</button></a>
+                <a href="/rules"><button>Правила</button></a>
+                <a href="/info"><button>Разработчики</button></a>
+        </nav>
+    </header>
+    <form method="post" action="{% url 'website:create' %}" enctype="multipart/form-data">
+        {% csrf_token %}<br>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" value="{{ website.name }}" required><br>
+
+        <label for = "text_data">Nickname: </label>
+        <input type="text" id="text_data" name="text_data" value="{{website.text_data}}" required>
+
+        <label for="photo">Photo:</label>
+        <input type="file" id="photo" name="photo" required accept="image/*"> <br>
+
+        <button type="submit">Save</button>
+    </form>
+</body>
+</html>
