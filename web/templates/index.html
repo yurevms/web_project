@@ -24,6 +24,7 @@
                 <p> {{post.name}}</p>
                 <p> {{post.text_data}}</p>
                 <img src="{{ post.photo.url }}" style="max-width: 20%;">
+                <a href="{% url 'website:delete' post.id %}">Удалить</a></br>
             {%endfor%}
         </ul>
     {%else%}

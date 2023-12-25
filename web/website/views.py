@@ -5,7 +5,7 @@ from .models import Post
 
 def index(request):
     post = Post.objects.all()
-    return render(request, 'website/index.html', {'posts': post})
+    return render(request, 'index.html', {'posts': post})
 
 def create(request):
     if request.method == 'POST':
@@ -15,7 +15,7 @@ def create(request):
         post.photo = request.FILES.get('photo')
         post.save()
         return HttpResponseRedirect(reverse('website:index'))
-    return render(request, 'website/create.html')
+    return render(request, 'create.html')
 
 def delete(request, id):
     try:
@@ -32,3 +32,9 @@ def like_post(request, id):
     post.likes += 1
     post.save()
     return HttpResponseRedirect('/website/')
+
+def rules(request):
+    return render(request, "rules.html", {'rules': rules})
+
+def info(request):
+    return render(request, "info.html", {'info': info})

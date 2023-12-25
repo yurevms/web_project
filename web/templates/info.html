@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мини-блог</title>
+    <style>
+        .photo img {
+            max-width: 15%;
+            height: auto;
+            border: 1px solid #ddd;
+            border-radius: 50px;
+        }
+        .head {
+            margin: auto 400px ;
+            font-family: Arial, sans-serif;
+
+        }
+        button{
+            padding: auto;
+        }
+        body{
+            margin: auto auto;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="head">
+            <h1>
+                    <a href="/"><button>Главная</button></a>
+                    <a href="/create"><button>Создать запись</button></a>
+                    <a href="/rules"><button>Правила</button></a>
+                    <a href="/info"><button>Разработчики</button></a>
+            </h1>
+        </div>
+    </header>
+    <p>Ярошевская Ксения___________Юрьев Максим</p>
+    <p>Telegram:___________________Telegram:</p>
+    <p>
+        <div class="photo">
+            <img src="{% static 'img/1.png' %}" alt="Ксения">
+            <img src="{% static 'img/2.png' %}" alt="Максим">
+        </div>
+    </p>
+</body>
+</html>

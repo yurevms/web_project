@@ -20,11 +20,11 @@
     </header>
     <form method="post" action="{% url 'website:create' %}" enctype="multipart/form-data">
         {% csrf_token %}<br>
-        <label for="name">Name:</label>
+        <label for="name">Nickname:</label>
         <input type="text" id="name" name="name" value="{{ website.name }}" required><br>
 
-        <label for = "text_data">Nickname: </label>
-        <input type="text" id="text_data" name="text_data" value="{{website.text_data}}" required>
+        <label for = "text_data">Text of post: </label>
+        <input type="text" id="text_data" name="text_data" value="{{website.text_data}}" required><br>
 
         <label for="photo">Photo:</label>
         <input type="file" id="photo" name="photo" required accept="image/*"> <br>
