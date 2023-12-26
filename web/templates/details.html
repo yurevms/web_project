@@ -28,33 +28,33 @@
     <div class="form-comment">
         <h3>Оставить комментарий</h3>
         <div>
-            <form method="post" action="{% url comm%}" enctype="multipart/form-data">
+            <form method="post" action="{% url 'website:comments' post.id %}" enctype="multipart/form-data">
                 {% csrf_token %}
                 <div>
                     <label>Ваш комментарий</label>
                     <textarea name="text_comment"></textarea>
                 </div>
                 <div>
-                    <label for="yourname">Введите имя</label>
-                    <input  type="text" id="yourname" name="yourname" value="{{website.yourname}}" required>
+                    <label>Введите имя</label>
+                    <input type="text" name="yourname">
                 </div>
                 <div>
-                    <label for="email">Введите email</label>
-                    <input type="email" id="email" name="email" value="{{website.email}}" required>
+                    <label>Введите email</label>
+                    <input type="email" name="email">
                 </div>
                 <div><input type="submit"></div>
             </form>
         </div>
     </div>
     <div>
-        {% for comment in post.comment_set.all%}
+        {% for comment in post.comments_set.all %}
         <div class="view-comment">
-            <h4>{{ comment.name }}</h4>
+            <h4>{{ comment.yourname }}</h4>
             <p>
                 {{ comment.text_comment}}
             </p>
         </div>
-        {%endfor%}
+        {% endfor %}
     </div>
 
 </body>
