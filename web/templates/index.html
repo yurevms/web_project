@@ -21,10 +21,10 @@
     {% if posts.count %}
         <ul>
             {% for post in posts%}
-                <p> {{post.name}}</p>
+                <p><a href="{{ post.id }}">{{post.name}}</a></p>
                 <p> {{post.text_data}}</p>
                 <img src="{{ post.photo.url }}" style="max-width: 20%;">
-                <a href="{% url 'website:delete' post.id %}">Удалить</a></br>
+                <a href="{% url 'website:delete' post.id %}">Удалить</a>
             {%endfor%}
         </ul>
     {%else%}

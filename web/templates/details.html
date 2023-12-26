@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мини-блог</title>
+</head>
+<body>
+    <header>
+        <div class="head">
+            <nav>
+            <a href="/"><button>Главная</button></a>
+            <a href="/create"><button>Создать запись</button></a>
+            <a href="/rules"><button>Правила</button></a>
+            <a href="/info"><button>Разработчики</button></a>
+            </nav>
+        </div>
+    </header>
+    <div>
+        <h1>{{post.name}}</h1>
+    </div>
+    <div>
+        <p> {{post.text_data}}</p>
+    </div>
+    <div>
+        <img src="{{ post.photo.url }}" style="max-width: 20%;">
+    </div>
+    <div class="form-comment">
+        <h3>Оставить комментарий</h3>
+        <div>
+            <form method="post" action="{% url comm%}" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div>
+                    <label>Ваш комментарий</label>
+                    <textarea name="text_comment"></textarea>
+                </div>
+                <div>
+                    <label for="yourname">Введите имя</label>
+                    <input  type="text" id="yourname" name="yourname" value="{{website.yourname}}" required>
+                </div>
+                <div>
+                    <label for="email">Введите email</label>
+                    <input type="email" id="email" name="email" value="{{website.email}}" required>
+                </div>
+                <div><input type="submit"></div>
+            </form>
+        </div>
+    </div>
+    <div>
+        {% for comment in post.comment_set.all%}
+        <div class="view-comment">
+            <h4>{{ comment.name }}</h4>
+            <p>
+                {{ comment.text_comment}}
+            </p>
+        </div>
+        {%endfor%}
+    </div>
+
+</body>
+</html>

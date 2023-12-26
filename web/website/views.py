@@ -1,7 +1,8 @@
-from django.shortcuts import render, HttpResponse, HttpResponseRedirect
+from django.shortcuts import render, HttpResponse, HttpResponseRedirect, redirect
 from django.http import HttpResponseNotFound
 from django.urls import reverse
 from .models import Post
+from .form import CommentsForm
 
 def index(request):
     post = Post.objects.all()
@@ -25,13 +26,18 @@ def delete(request, id):
     except:
         return HttpResponseNotFound('<h2> Post not found </h2>')
 
+def details(request, id):
+    post = Post.objects.get(id=id)
+    return render(request, 'details.html', {'post': post})
 
-# лайки
-def like_post(request, id):
-    post = Post.objects.get(id = id)
-    post.likes += 1
-    post.save()
-    return HttpResponseRedirect('/website/')
+def comm(request, id):
+    form = CommentsForm(request.POST)
+    if form.is_valid():
+        form = form.save(commit=False)
+        form.post_id = id
+        form.save()
+    return redirect(f'/{id}')
+
 
 def rules(request):
     return render(request, "rules.html", {'rules': rules})

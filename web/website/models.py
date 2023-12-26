@@ -9,3 +9,12 @@ class Post(models.Model):
 
     def __str__(self):
         return self.name
+
+class Comment(models.Model):
+    email = models.EmailField()
+    yourname = models.CharField(max_length=50)
+    text_comment = models.CharField(max_length=300)
+    post = models.ForeignKey(Post, verbose_name='Публикация', on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.name
