@@ -1,0 +1,279 @@
+body {
+}
+
+header {
+    background-color: #4682B4;
+    opacity: 0.5;
+    filter: alpha(opacity=50);
+    width: 100%;
+    height: 80px;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+
+html {
+    background-image: url(../img/background1.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+button {
+    border: none;
+    background-color: transparent;
+    color: black;
+    text-align: center;
+    font-family: FreeMono, monospace;
+    font-size: 25px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+#button1 {
+    position: absolute;
+    top: 25px;
+    left: 150px;
+}
+
+#button2 {
+    position: absolute;
+    top: 25px;
+    left: 450px;
+}
+
+#button3 {
+    position: absolute;
+    top: 25px;
+    right: 450px;
+}
+
+#button4 {
+    position: absolute;
+    top: 25px;
+    right: 150px;
+}
+
+button:hover {
+    color: #DC143C;
+}
+/*Создать запись*/
+
+label {
+    font-family: FreeMono, monospace;
+    font-size: 19px;
+    font-weight: 600;
+}
+
+.lb1 {
+    position: absolute;
+    top: 180px;
+    left: 40px;
+}
+
+input[id=name] {
+    color: black;
+    width: 300px;
+    height: 25px;
+    background-color: rgba(180, 180, 180, 0.3);
+    border-radius: 5px;
+    box-sizing: border-box;
+    border: 2px solid;
+    border-color: rgb(163, 181, 255);
+    position: absolute;
+    top: 215px;
+    left: 40px;
+}
+
+.lb2 {
+    position: absolute;
+    top: 252px;
+    left: 40px;
+}
+
+textarea[id=text_data] {
+    color: black;
+    width: 800px;
+    height: 200px;
+    background-color: rgba(180, 180, 180, 0.3);
+    border-radius: 10px;
+    box-sizing: border-box;
+    border: 2px solid;
+    border-color: rgb(163, 181, 255);
+    position: absolute;
+    top: 287px;
+    left: 40px;
+}
+.lb3 {
+    position: absolute;
+    top: 500px;
+    left: 40px;
+}
+
+input[id=photo] {
+    color: white;
+    width: 100px;
+    height: 25px;
+    background-color: black;
+    opacity: 0.5;
+    filter: alpha(opacity=50);
+    border-radius: 10px;
+    box-sizing: border-box;
+    border: 2px solid;
+    border-color: blue;
+    position: absolute;
+    top: 500px;
+    left: 300px;
+    cursor: pointer;
+}
+
+.but {
+    font-family: FreeMono, monospace;
+    font-size: 19px;
+    font-weight: 600;
+    text-align: center;
+    color: white;
+    width: 180px;
+    height: 30px;
+    background-color: black;
+    opacity: 0.5;
+    filter: alpha(opacity=50);
+    border-radius: 10px;
+    border: 2px solid;
+    border-color: blue;
+    position: absolute;
+    top: 550px;
+    left: 40px;
+    cursor: pointer;
+}
+
+/*Правила*/
+
+.rul {
+    font-family: FreeMono, monospace;
+    font-size: 19px;
+    position: absolute;
+    top: 200px;
+    left: 100px;
+    right: 100px;
+}
+
+/*Разработчики*/
+
+.photos1 img{
+    border: 1px solid #ddd;
+    border-radius: 30px;
+    width: 400px;
+    height: 400px;
+    position: absolute;
+    top: 250px;
+    left: 250px;
+}
+
+.photos2 img{
+    border: 1px solid #ddd;
+    border-radius: 30px;
+    width: 400px;
+    height: 400px;
+    position: absolute;
+    top: 250px;
+    right: 250px;
+}
+
+.header2 {
+    font-family: FreeMono, monospace;
+    color: black;
+    font-size: 25px;
+    font-weight: 700;
+    position: absolute;
+    top: 100px;
+    left: 550px;
+}
+
+.header3 {
+    font-family: FreeMono, monospace;
+    color: black;
+    opacity: 0.5;
+    filter: alpha(opacity=50);
+    font-size: 25px;
+    font-weight: 700;
+    position: absolute;
+    top: 93px;
+    left: 550px;
+}
+
+.name1 {
+    font-family: FreeMono, monospace;
+    font-size: 19px;
+    font-weight: 600;
+    position: absolute;
+    top: 190px;
+    right: 375px;
+}
+
+.name2 {
+    font-family: FreeMono, monospace;
+    font-size: 19px;
+    font-weight: 600;
+    position: absolute;
+    top: 190px;
+    left: 380px;
+}
+
+/*Главная страница*/
+
+.posts{
+    font-family: FreeMono, monospace;
+    font-size: 19px;
+    font-weight: 600;
+    weight: auto;
+    height: auto;
+    position: absolute;
+    top: 140px;
+    left: 55px;
+}
+
+.posts1{
+    border: 1px solid #ddd;
+    border-radius: 30px;
+    margin: 10px 100px 10px 100px;
+    align-items: center;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(180, 180, 180, 0.3);
+}
+
+.photoIndex{
+    border: 1px solid #ddd;
+    border-radius: 30px;
+    width: auto;
+    height: auto;
+    margin: 10px 0px 0px 100px
+}
+
+a{
+    color: inherit;
+    text-decoration: none;
+    hover:
+}
+
+a:hover{
+    color: #DC143C;
+}
+
+.nameofpost{
+    font-size: 24px;
+    position: absolute;
+    left: 635px;
+}
+.textofpost{
+    margin: 70px 100px 0px 100px;
+
+}
+
+
+

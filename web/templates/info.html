@@ -5,45 +5,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Мини-блог</title>
-    <style>
-        .photo img {
-            max-width: 15%;
-            height: auto;
-            border: 1px solid #ddd;
-            border-radius: 50px;
-        }
-        .head {
-            margin: auto 400px ;
-            font-family: Arial, sans-serif;
+    <link rel="stylesheet" href="../static/style/styles.css">
 
-        }
-        button{
-            padding: auto;
-        }
-        body{
-            margin: auto auto;
-        }
-
-    </style>
-</head>2
+</head>
 <body>
     <header>
         <div class="head">
             <h1>
-                    <a href="/"><button>Главная</button></a>
-                    <a href="/create"><button>Создать запись</button></a>
-                    <a href="/rules"><button>Правила</button></a>
-                    <a href="/info"><button>Разработчики</button></a>
+                    <a href="/"><button class="button" id="button1">Главная</button></a>
+                    <a href="/create"><button class="button" id="button2">Создать запись</button></a>
+                    <a href="/rules"><button class="button" id="button3">Правила</button></a>
+                    <a href="/info"><button class="button" id="button4">Разработчики</button></a>
             </h1>
         </div>
     </header>
-    <p>Ярошевская Ксения___________Юрьев Максим</p>
-    <p>Telegram:___________________Telegram:</p>
+    <p class = "header3">Сайт разработали</p>
+    <p class = "name1">Ярошевская Ксения</p> <p class = "name2">Юрьев Максим</p>
     <p>
-        <div class="photo">
-            <img src="{% static 'img/1.png' %}" alt="Ксения">
-            <img src="{% static 'img/2.png' %}" alt="Максим">
+        <div class="photos1">
+            <img src="{% static 'img/tg1.png' %}" alt="Ксения">
         </div>
+        <div class="photos2">
+            <img src="{% static 'img/tg2.png' %}" alt="Максим">
+        </div>
+
     </p>
 </body>
 </html>

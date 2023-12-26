@@ -3,29 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/style/styles.css">
     <title>Мини-блог</title>
-    <style>
-
-    </style>
 </head>
 <body>
     <header>
-        <h1>Добро пожаловать в мини-блог</h1>
         <nav>
-                <a href="/"><button>Главная</button></a>
-                <a href="/create"><button>Создать запись</button></a>
-                <a href="/rules"><button>Правила</button></a>
-                <a href="/info"><button>Разработчики</button></a>
+                <a href="/"><button class="button" id="button1">Главная</button></a>
+                <a href="/create"><button class="button" id="button2">Создать запись</button></a>
+                <a href="/rules"><button class="button" id="button3">Правила</button></a>
+                <a href="/info"><button class="button" id="button4">Разработчики</button></a>
         </nav>
+        <h1 class="header2">Добро пожаловать в мини-блог</h1>
     </header>
     {% if posts.count %}
-        <ul>
-            {% for post in posts%}
-                <p><a href="{{ post.id }}">{{post.name}}</a></p>
-                <p> {{post.text_data}}</p>
-                <img src="{{ post.photo.url }}" style="max-width: 20%;">
-                <a href="{% url 'website:delete' post.id %}">Удалить</a>
-            {%endfor%}
+        <ul class="posts">
+            <div class="posts1">
+                {% for post in posts%}
+                    <p class="nameofpost"><a href="{{ post.id }}">{{post.name}}</a></p>
+                    <p class="textofpost"> {{post.text_data}}</p>
+                    <img class="photoIndex" src="{{ post.photo.url }}" style="max-width: 20%;">
+                    <a href="{% url 'website:delete' post.id %}">Удалить</a></br>
+                {%endfor%}
+            </div>
         </ul>
     {%else%}
         <p>Отсутсвуют записи</p>
