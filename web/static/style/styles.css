@@ -284,12 +284,11 @@ a:hover{
 .nickname{
     font-size: 15px;
     position: absolute;
-    left: 635px;
+    left: 535px;
 }
 
 .textdetails{
-    position: absolute;
-    margin: 45px 100px 0px 100px;
+    margin: 70px 100px 0px 100px;
 }
 
 .imgdetails img{
@@ -297,7 +296,7 @@ a:hover{
     border-radius: 30px;
     width: auto;
     height: auto;
-    margin: 100px 0px 0px 100px
+    margin: 10px 0px 0px 100px
 }
 
 .form-comment{
