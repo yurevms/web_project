@@ -3,54 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/style/styles.css">
     <title>Мини-блог</title>
 </head>
 <body>
     <header>
-            <nav>
-            <a href="/"><button>Главная</button></a>
-            <a href="/create"><button>Создать запись</button></a>
-            <a href="/rules"><button>Правила</button></a>
-            <a href="/info"><button>Разработчики</button></a>
-            </nav>
+        <nav>
+            <a href="/"><button class="button" id="button1">Главная</button></a>
+            <a href="/create"><button class="button" id="button2">Создать запись</button></a>
+            <a href="/rules"><button class="button" id="button3">Правила</button></a>
+            <a href="/info"><button class="button" id="button4">Разработчики</button></a>
+        </nav>
     </header>
-    <div>
-        <h1>{{post.name}}</h1>
-    </div>
-    <div>
-        <p> {{post.text_data}}</p>
-    </div>
-    <div>
-        <img src="{{ post.photo.url }}" style="max-width: 20%;">
-    </div>
-    <div class="form-comment">
-        <h3>Оставить комментарий</h3>
-        <div>
-            <form method="post" action="{% url 'website:comments' post.id %}" enctype="multipart/form-data">
-                {% csrf_token %}
-                <div>
-                    <label>Ваш комментарий</label>
-                    <textarea name="text_comment"></textarea>
-                </div>
-                <div>
-                    <label>Введите имя</label>
-                    <input type="text" name="yourname">
-                </div>
-                <div>
-                    <label>Введите email</label>
-                    <input type="email" name="email">
-                </div>
-                <div><input type="submit"></div>
-            </form>
+    <div class="details">
+        <div class="nickname">
+            <h1>{{post.name}}</h1>
+        </div>
+        <div class="textdetails">
+            <p> {{post.text_data}}</p>
+        </div>
+        <div class="imgdetails">
+            <img src="{{ post.photo.url }}" style="max-width: 20%;">
         </div>
     </div>
-    <div>
+    <div class="form-comment">
+        <h3 class="head-comment">Оставить комментарий</h3>
+            <form method="post" action="{% url 'website:comments' post.id %}" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="ur-comm">
+                    <label>Ваш комментарий</label><br>
+                    <textarea id="comm_data" name="text_comment"></textarea>
+                </div>
+                <div class="ur-name">
+                    <label>Введите имя</label><br>
+                    <input id="comm_name" type="text" name="yourname">
+                </div>
+                <div class="ur-email">
+                    <label>Введите email</label><br>
+                    <input id="comm_email" type="email" name="email">
+                </div>
+                <div><input id="save" type="submit"></div>
+            </form>
+    </div>
+    <div class="view-comm">
         {% for comment in post.comments_set.all %}
-        <div class="view-comment">
-            <h4>{{ comment.yourname }}</h4>
-            <p>
-                {{ comment.text_comment}}
-            </p>
+        <div class="nameofcommentaries">
+            <label class="nameofcommentaries1">{{ comment.yourname }}</label>
+        </div>
+        <div class="textofcommentaries">
+            <label class="textofcommentaries1">{{ comment.text_comment}}</label>
         </div>
         {% endfor %}
     </div>
